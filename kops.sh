@@ -9,7 +9,7 @@ set -e
 # -------------------------------
 # Variables
 # -------------------------------
-BUCKET_NAME="ajay-client-bkt-143"
+BUCKET_NAME="sapi-bkt-12345"
 CLUSTER_NAME="reyaz.k8s.local"
 REGION="ap-south-1"
 ZONES="ap-south-1a,ap-south-1b"
