@@ -70,7 +70,7 @@ Deletes the Kubernetes cluster and completely removes the kOps S3 state bucket, 
 The main configuration is defined at the beginning of the script.
 
 ```bash
-BUCKET_NAME="ajay-client-bkt-143"
+BUCKET_NAME="sapi-bkt-12345"
 CLUSTER_NAME="reyaz.k8s.local"
 REGION="ap-south-1"
 ZONES="ap-south-1a,ap-south-1b"
@@ -220,7 +220,7 @@ export KOPS_STATE_STORE="s3://${BUCKET_NAME}"
 For the current configuration:
 
 ```text
-s3://ajay-client-bkt-143
+s3://sapi-bkt-12345
 ```
 
 The bucket is automatically created during cluster creation.
@@ -597,14 +597,14 @@ kops get cluster --name reyaz.k8s.local -o yaml
 ### Check S3 bucket
 
 ```bash
-aws s3 ls s3://ajay-client-bkt-143
+aws s3 ls s3://sapi-bkt-12345
 ```
 
 ### Check S3 versioning
 
 ```bash
 aws s3api get-bucket-versioning \
-    --bucket ajay-client-bkt-143
+    --bucket sapi-bkt-12345
 ```
 
 ---
@@ -636,7 +636,7 @@ grep BUCKET_NAME kops-cluster.sh
 The current bucket configured in the script is:
 
 ```text
-ajay-client-bkt-143
+sapi-bkt-12345
 ```
 
 If your actual bucket is different, update:
