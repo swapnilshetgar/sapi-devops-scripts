@@ -21,13 +21,13 @@ The script also manages the **kOps S3 state store** and automatically removes:
 This script provides two operations:
 
 ```bash
-./kops-cluster.sh create
+./kops.sh create
 ```
 
 Creates and deploys the kOps Kubernetes cluster.
 
 ```bash
-./kops-cluster.sh delete
+./kops.sh delete
 ```
 
 Deletes the Kubernetes cluster and completely removes the kOps S3 state bucket, including versioned objects.
@@ -312,13 +312,13 @@ removes the empty S3 bucket.
 Make the script executable:
 
 ```bash
-chmod +x kops-cluster.sh
+chmod +x kops.sh
 ```
 
 Run:
 
 ```bash
-./kops-cluster.sh create
+./kops.sh create
 ```
 
 The script performs the following operations:
@@ -422,7 +422,7 @@ kops validate cluster
 Run:
 
 ```bash
-./kops-cluster.sh delete
+./kops.sh delete
 ```
 
 The script displays a warning:
@@ -490,7 +490,7 @@ Any other input cancels the operation.
 When the delete command is executed:
 
 ```text
-./kops-cluster.sh delete
+./kops.sh delete
              |
              ↓
      Confirmation
@@ -616,7 +616,7 @@ aws s3api get-bucket-versioning \
 Running:
 
 ```bash
-./kops-cluster.sh delete
+./kops.sh delete
 ```
 
 deletes the Kubernetes infrastructure and S3 state bucket.
@@ -630,7 +630,7 @@ Make sure you do not need the cluster or its state before proceeding.
 Before deleting, verify:
 
 ```bash
-grep BUCKET_NAME kops-cluster.sh
+grep BUCKET_NAME kops.sh
 ```
 
 The current bucket configured in the script is:
@@ -680,21 +680,21 @@ If you change the AWS region, verify that the AMI exists and is compatible with 
 ## Create
 
 ```bash
-chmod +x kops-cluster.sh
+chmod +x kops.sh
 
-./kops-cluster.sh create
+./kops.sh create
 ```
 
 ## Delete
 
 ```bash
-./kops-cluster.sh delete
+./kops.sh delete
 ```
 
 ## Invalid command
 
 ```bash
-./kops-cluster.sh
+./kops.sh
 ```
 
 Output:
@@ -702,8 +702,8 @@ Output:
 ```text
 Usage:
 
-  ./kops-cluster.sh create
-  ./kops-cluster.sh delete
+  ./kops.sh create
+  ./kops.sh delete
 ```
 
 ---
@@ -752,11 +752,11 @@ The main benefit is that **one command can create the complete kOps environment 
 
 ```bash
 # Make executable
-chmod +x kops-cluster.sh
+chmod +x kops.sh
 
 # Create cluster
-./kops-cluster.sh create
+./kops.sh create
 
 # Delete cluster and completely clean S3
-./kops-cluster.sh delete
+./kops.sh delete
 ```
